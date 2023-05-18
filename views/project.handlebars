@@ -13,3 +13,8 @@
       </div>
     </form>
   </div>
+  {{#each comments as |comment|}}
+    <div class="row mb-2">
+     <p>{{comment.description}}</p>
+    </div>
+    {{/each}}
