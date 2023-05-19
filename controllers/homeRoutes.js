@@ -41,7 +41,13 @@ router.get('/project/:id', async (req, res) => {
           attributes: ['name'],
         },
         {
-          model: Comment
+          model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: ['name'],
+            },
+          ],
         },
       ],
     });

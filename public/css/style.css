@@ -22,3 +22,12 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+.background {
+  background-color: dodgerblue;
+  border-style: solid;
+}
+
+.mainBackground {
+  background-color: cornflowerblue;
+}

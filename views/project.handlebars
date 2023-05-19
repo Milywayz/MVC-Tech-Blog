@@ -4,7 +4,7 @@
   </script>
 {{/unless}}
 
-<div class="text-center">
+<div class="text-center background">
   <h2>{{name}}</h2>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
@@ -23,10 +23,11 @@
 </form>
 
 {{#each comments as |comment|}}
-  <div class="row mb-2">
-    <p>{{comment.id}}</p>
-    <p>{{comment.description}}</p>
-    <p>{{format_date comment.date_created}}</p> 
+  <div class="background">
+    <div>
+      <h4>Comment created by {{comment.user.name}} on {{format_date comment.date_created}}</h4>
+    </div>
+    <h4>{{comment.description}}</h4>
     <button data-comment-id='{{comment.id}}' data-project-id='{{id}}' class="btn btn-primary deleteButton">Delete</button>
   </div>
 {{/each}}
