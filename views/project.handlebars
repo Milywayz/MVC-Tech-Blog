@@ -1,20 +1,34 @@
+{{#unless logged_in}}
+  <script>
+    window.location.href = "/login";
+  </script>
+{{/unless}}
+
 <div class="text-center">
   <h2>{{name}}</h2>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 </div>
- <div class="col-md-6">
+
+<form>
+  <div class="col-md-6">
     <h3>Add a comment!</h3>
-      <div class="form-group">
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create Comment</button>
-      </div>
-    </form>
-  </div>
-  {{#each comments as |comment|}}
-    <div class="row mb-2">
-     <p>{{comment.description}}</p>
+    <div class="form-group">
+      <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
     </div>
-    {{/each}}
+    <div class="form-group">
+      <button data-project-id='{{id}}' class="btn btn-primary" id="createButton">Create Comment</button>
+    </div>
+  </div>
+</form>
+
+{{#each comments as |comment|}}
+  <div class="row mb-2">
+    <p>{{comment.id}}</p>
+    <p>{{comment.description}}</p>
+    <p>{{format_date comment.date_created}}</p> 
+    <button data-comment-id='{{comment.id}}' data-project-id='{{id}}' class="btn btn-primary deleteButton">Delete</button>
+  </div>
+{{/each}}
+
+<script src="/js/comment.js"></script>
