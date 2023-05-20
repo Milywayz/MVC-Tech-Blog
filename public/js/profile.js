@@ -1,3 +1,4 @@
+// Retrieving Post inputs
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -21,6 +22,7 @@ const newFormHandler = async (event) => {
   }
 };
 
+// Deleting Post inputs
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');

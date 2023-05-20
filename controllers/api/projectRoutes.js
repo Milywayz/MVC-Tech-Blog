@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Project, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Creating a new post
 router.post('/', withAuth, async (req, res) => {
   try {
     const newProject = await Project.create({
@@ -15,6 +16,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// Deleting a post
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.destroy({
@@ -35,6 +37,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+// Commenting on a post
 router.post('/comment/:id', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
@@ -55,6 +58,7 @@ router.post('/comment/:id', withAuth, async (req, res) => {
   }
 });
 
+// Deleting a comment on a post
 router.delete('/comment/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({

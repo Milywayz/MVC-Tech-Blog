@@ -1,3 +1,4 @@
+// Retrieving comments inputs
 const newCommentHandler = async (event) => {
     event.preventDefault();
     let projectid = event.target.dataset.projectId
@@ -21,6 +22,7 @@ const newCommentHandler = async (event) => {
     }
   };
   
+  // Deleting comments inputs
   const delButtonHandler = async (event) => {
     event.preventDefault();
       let commentid = event.target.dataset.commentId

@@ -1,3 +1,4 @@
+// Connecting User to post and comments
 const User = require('./User');
 const Project = require('./Project');
 const Comment = require('./comment');

@@ -1,3 +1,4 @@
+// Retrieving Login inputs
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -22,6 +23,7 @@ const loginFormHandler = async (event) => {
   }
 };
 
+// Retrieving Signup inputs
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
